@@ -17,7 +17,10 @@ async function fetchAndSaveLottoNumber() {
         execSync('git config --global user.email "github-actions[bot]@users.noreply.github.com"');
         execSync(`git add "${fileName}"`);
         execSync(`git commit -m "Add lotto number response file for ${drwNoDate}"`);
-        execSync('git push');
+
+        // Git push using GitHub token
+        const githubToken = process.env.GITHUB_TOKEN;
+        execSync(`git push https://${githubToken}@github.com/<your-username>/<your-repo>.git`);
         console.log('File committed and pushed to the repository');
     } catch (error) {
         console.error('Error fetching lotto number:', error);
