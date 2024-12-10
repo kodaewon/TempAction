@@ -26,5 +26,6 @@ jobs:
         npm install --save-dev @types/node
 
     - name: Run TypeScript tests
-      run: echo "Start testing"
-      run: npx jest --config jest.config.js
+      run: |
+       echo "Start testing"
+       npx jest --config jest.config.js
