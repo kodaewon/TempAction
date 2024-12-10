@@ -27,4 +27,6 @@ async function fetchAndSaveLottoNumber() {
     }
 }
 
-fetchAndSaveLottoNumber();
+test('fetchAndSaveLottoNumber should fetch data and save it to a file', async () => {
+    await fetchAndSaveLottoNumber();
+});
