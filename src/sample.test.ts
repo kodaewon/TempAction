@@ -20,7 +20,7 @@ async function fetchAndSaveLottoNumber() {
 
         // Git push using GitHub token
         const githubToken = process.env.GITHUB_TOKEN;
-        execSync(`git push https://${githubToken}@github.com/<your-username>/<your-repo>.git`);
+        execSync(`git push https://${githubToken}@github.com/kodaewon/TempAction.git`);
         console.log('File committed and pushed to the repository');
     } catch (error) {
         console.error('Error fetching lotto number:', error);
