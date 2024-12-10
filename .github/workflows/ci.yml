@@ -1,13 +1,3 @@
-name: CI
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,3 +16,17 @@ jobs:
 
     - name: Run tests
       run: npm test
+
+    - name: Fetch Lotto Number and Save to File
+      run: |
+        curl -s 'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=861' -o response.json
+        drwNoDate=$(jq -r '.drwNoDate' response.json)
+        mv response.json "${drwNoDate}.json"
+
+    - name: Commit and Push File
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add *.json
+        git commit -m "Add lotto number response file"
+        git push
