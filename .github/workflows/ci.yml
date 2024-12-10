@@ -20,7 +20,10 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+      npm install
+      npm install axios
+      npm install --save-dev @types/node
 
     - name: Run TypeScript tests
       run: npx jest --config jest.config.js
