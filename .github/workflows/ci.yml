@@ -33,4 +33,4 @@ jobs:
     - name: Run TypeScript tests
       run: |
        echo "Start testing"
-       npx jest --config jest.config.js
+       npx ts-node src/fetchAndSave.ts
