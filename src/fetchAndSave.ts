@@ -21,7 +21,7 @@ async function fetchAndSaveLottoNumber() {
         await execPromise(`git add "${fileName}"`);
         await execPromise(`git commit -m "Add lotto number response file for ${drwNoDate}"`);
         const githubToken = process.env.GITHUB_TOKEN;
-        await execPromise(`git push https://${githubToken}@github.com/your-username/your-repo.git`);
+        await execPromise(`git push https://${githubToken}@github.com/kodaewon/TempAction.git`);
         console.log('File committed and pushed to the repository');
     } catch (error) {
         console.error('Error fetching lotto number:', error);
