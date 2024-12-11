@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 
 async function fetchAndSaveLottoNumber() {
     try {
-        const response = await axios.get('https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=861');
+        const response = await axios.get('https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=860');
         const data = response.data;
         const drwNoDate = data.drwNoDate.replace(/[/\\?%*:|"<>]/g, '-'); // 파일명 안전하게 변경
 
