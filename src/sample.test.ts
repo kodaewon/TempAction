@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs';
-import { execSync } from 'child_process';
+import { exec } from 'child_process';
+import util from 'util';
 
 const execPromise = util.promisify(exec);
 
