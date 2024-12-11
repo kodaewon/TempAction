@@ -3,9 +3,13 @@ name: Test Environment Setup
 on:
   # 이 GitHub Actions 워크플로우는 월요일부터 금요일까지 매일 UTC 기준 오전 3시에 실행되도록 예약되어 있습니다.
   # 또한 "workflow_dispatch" 이벤트를 사용하여 수동으로 트리거할 수도 있습니다.
+  # schedule:
+  #   - cron: '0 21 * * 1-5'
+  # workflow_dispatch:
+
   schedule:
-    - cron: '0 21 * * 1-5'
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   setup-test-environment:
