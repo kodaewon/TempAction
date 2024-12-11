@@ -7,9 +7,9 @@ on:
   #   - cron: '0 21 * * 1-5'
   # workflow_dispatch:
 
-  schedule:
-    branches:
-      - main
+    push:
+      branches:
+        - main
 
 jobs:
   setup-test-environment:
